@@ -1300,3 +1300,14 @@ ul {
   background: var(--primary);
   transform: translateY(-3px);
 }
+
+@media (max-width: 992px) {
+  .floating-widgets .float-btn {
+    display: none !important;
+  }
+  .floating-widgets {
+    bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+    right: 15px;
+    gap: 0;
+  }
+}

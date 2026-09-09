@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ==========================================================================
-   Mobile Bottom Sticky Inquiry & Action Bar
+   Mobile Bottom Sticky Inquiry & Action Bar (WhatsApp & Enquire Now)
    ========================================================================== */
 
 .mobile-bottom-bar {
@@ -13,15 +13,15 @@
   left: 0;
   right: 0;
   background: #ffffff;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.15);
   z-index: 1500;
-  padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
 }
 
 .mobile-bottom-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.25fr;
-  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -30,10 +30,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 9px 8px;
-  border-radius: 8px;
-  font-size: 0.82rem;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -41,7 +41,7 @@
   cursor: pointer;
   white-space: nowrap;
   line-height: 1;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -50,12 +50,7 @@
 }
 
 .mobile-btn i {
-  font-size: 0.95rem;
-}
-
-.mobile-btn.call {
-  background: #f1f3f5;
-  color: #212529;
+  font-size: 1.1rem;
 }
 
 .mobile-btn.whatsapp {
@@ -63,8 +58,18 @@
   color: #ffffff;
 }
 
+.mobile-btn.whatsapp:hover {
+  background: #1ebc57;
+  color: #ffffff;
+}
+
 .mobile-btn.enquire {
   background: var(--primary-gradient);
+  color: #ffffff;
+}
+
+.mobile-btn.enquire:hover {
+  background: linear-gradient(135deg, #740f14 0%, #9e1a21 100%);
   color: #ffffff;
 }
 
@@ -183,8 +188,36 @@
   }
 }
 
-/* Tablet & Medium devices (<= 992px) */
+/* Tablet & Mobile devices (<= 992px) */
 @media (max-width: 992px) {
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Show Bottom Sticky Bar */
+  .mobile-bottom-bar {
+    display: block !important;
+  }
+
+  /* Hide Redundant Floating Action Buttons on Mobile / Tablet */
+  .floating-widgets .float-btn {
+    display: none !important;
+  }
+
+  /* Keep Scroll To Top neatly positioned above bottom bar */
+  .floating-widgets {
+    bottom: calc(75px + env(safe-area-inset-bottom, 0px) + 10px) !important;
+    right: 14px !important;
+    gap: 0 !important;
+  }
+
+  .scroll-top-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
   .top-bar-left {
     display: none;
   }
@@ -248,34 +281,6 @@
 
 /* Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
-  body {
-    padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px));
-  }
-
-  /* Show Bottom Sticky Bar */
-  .mobile-bottom-bar {
-    display: block;
-  }
-
-  /* Hide Redundant Floating Action Buttons on Mobile */
-  .floating-widgets .float-btn {
-    display: none !important;
-  }
-
-  /* Keep Scroll To Top neatly positioned above bottom bar */
-  .floating-widgets {
-    bottom: calc(65px + env(safe-area-inset-bottom, 0px) + 12px);
-    right: 14px;
-    gap: 0;
-  }
-
-  .scroll-top-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  }
-
   /* Sections & Layout */
   .section {
     padding: 50px 0;
@@ -550,7 +555,7 @@
   #toast-container {
     left: 12px;
     right: 12px;
-    bottom: calc(65px + env(safe-area-inset-bottom, 0px) + 8px);
+    bottom: calc(75px + env(safe-area-inset-bottom, 0px) + 8px);
   }
 
   .toast {
@@ -565,17 +570,17 @@
 /* Extra Small Phones (<= 380px) */
 @media (max-width: 380px) {
   .mobile-bottom-grid {
-    gap: 6px;
+    gap: 8px;
   }
 
   .mobile-btn {
-    padding: 9px 4px;
-    font-size: 0.74rem;
-    gap: 4px;
+    padding: 11px 8px;
+    font-size: 0.82rem;
+    gap: 6px;
   }
 
   .mobile-btn i {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .hero-content h1 {
