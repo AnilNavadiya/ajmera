@@ -1,0 +1,213 @@
+/* ==========================================================================
+   AJMERA TRENDS - Responsive Styling & Mobile Drawer
+   ========================================================================== */
+
+/* Mobile Bottom Fixed Inquiry Bar */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+  z-index: 1500;
+  padding: 10px 16px;
+}
+
+.mobile-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 10px;
+}
+
+.mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mobile-btn.call {
+  background: #f0f0f0;
+  color: #222;
+}
+
+.mobile-btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.mobile-btn.enquire {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+/* Offcanvas Navigation Menu Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
+  z-index: 2500;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.drawer-header .drawer-logo img {
+  height: 40px;
+}
+
+.drawer-close {
+  background: #f5f5f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.drawer-links a {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.drawer-links a:hover, .drawer-links a.active {
+  color: var(--primary);
+}
+
+.drawer-contact-info {
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+  .timeline-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .top-bar-left {
+    display: none;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  .stats-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reasons-grid, .models-grid, .category-grid, .awards-carousel-grid, .testimonials-grid, .gallery-grid-main, .blog-grid-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .store-locator-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .store-sidebar {
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 65px;
+  }
+  .mobile-bottom-bar {
+    display: block;
+  }
+  .hero-section {
+    padding: 50px 0 70px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-highlights {
+    grid-template-columns: 1fr;
+  }
+  .stats-wrapper {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .stat-box {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+  .reasons-grid, .models-grid, .category-grid, .awards-carousel-grid, .testimonials-grid, .gallery-grid-main, .blog-grid-main {
+    grid-template-columns: 1fr;
+  }
+  .timeline-track {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .floating-widgets {
+    bottom: 80px;
+    right: 15px;
+  }
+}
