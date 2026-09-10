@@ -239,23 +239,46 @@
     display: block !important;
   }
 
-  /* Hide Redundant Floating Action Buttons on Mobile / Tablet */
+  /* Remove Floating Sidebar on Mobile / Tablet */
+  .floating-widgets {
+    position: static !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .floating-widgets .float-btn {
     display: none !important;
   }
 
-  /* Keep Scroll To Top neatly positioned above bottom bar */
-  .floating-widgets {
-    bottom: calc(70px + env(safe-area-inset-bottom, 0px) + 10px) !important;
+  /* Go to Top Button Always Visible on Mobile View */
+  .scroll-top-btn {
+    display: flex !important;
+    position: fixed !important;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px) + 10px) !important;
     right: 14px !important;
-    gap: 0 !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: var(--primary-gradient) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(212, 175, 55, 0.4) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1400 !important;
+    font-size: 1rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition: transform 0.2s ease, background 0.2s ease !important;
   }
 
-  .scroll-top-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 0.92rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  .scroll-top-btn:active {
+    transform: scale(0.92) !important;
   }
 
   .top-bar-left {
