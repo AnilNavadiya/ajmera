@@ -50,6 +50,7 @@ function initForms() {
       const email = form.querySelector('[name="email"]')?.value?.trim();
       const state = form.querySelector('[name="state"]')?.value?.trim();
       const budget = form.querySelector('[name="budget"]')?.value?.trim();
+      const message = form.querySelector('[name="message"]')?.value?.trim();
 
       // Basic Validation
       if (!name) {
@@ -76,6 +77,7 @@ function initForms() {
         email: email || 'N/A',
         state: state || 'N/A',
         budget: budget || 'N/A',
+        message: message || 'N/A',
         timestamp: new Date().toISOString(),
         source: form.getAttribute('id') || 'General Form'
       };
